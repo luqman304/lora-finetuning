@@ -1,0 +1,4 @@
+{"instruction":"Translate to French","input":"Good morning","output":"Bonjour"}
+{"instruction":"Summarize","input":"AI will transform many industries by automating complex tasks.","output":"AI will automate complex work across industries."}
+{"instruction":"Write Python","input":"Function to add two numbers a and b","output":"def add(a, b):\n    return a + b"}
+{"instruction":"Classify sentiment","input":"I love this!","output":"positive"}
