@@ -1,0 +1,28 @@
+{
+  "name": "few-shot-8",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "adapter": null,
+  "split": "test",
+  "prompt_style": "full",
+  "shots": 8,
+  "device": "mps",
+  "mean_prompt_tokens": 650.5418831168831,
+  "examples_per_second": 2.39,
+  "resources": {
+    "seconds": 1286.5,
+    "peak_accelerator_gb": 3.25,
+    "peak_process_rss_gb": 0.664
+  },
+  "n": 3080,
+  "accuracy": 0.7623376623376623,
+  "accuracy_ci": [
+    0.7477272727272727,
+    0.7772727272727272
+  ],
+  "macro_f1": 0.7876028673417469,
+  "macro_f1_ci": [
+    0.7715032956678973,
+    0.7992635945048512
+  ],
+  "invalid_rate": 0.0672077922077922
+}

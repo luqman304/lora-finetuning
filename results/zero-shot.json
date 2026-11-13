@@ -1,0 +1,28 @@
+{
+  "name": "zero-shot",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "adapter": null,
+  "split": "test",
+  "prompt_style": "full",
+  "shots": 0,
+  "device": "mps",
+  "mean_prompt_tokens": 447.60032467532466,
+  "examples_per_second": 3.61,
+  "resources": {
+    "seconds": 853.3,
+    "peak_accelerator_gb": 2.177,
+    "peak_process_rss_gb": 0.483
+  },
+  "n": 3080,
+  "accuracy": 0.19123376623376623,
+  "accuracy_ci": [
+    0.17727272727272728,
+    0.20487824675324676
+  ],
+  "macro_f1": 0.19359627070991303,
+  "macro_f1_ci": [
+    0.17941077813658113,
+    0.20472917976728602
+  ],
+  "invalid_rate": 0.3948051948051948
+}

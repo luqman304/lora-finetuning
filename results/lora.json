@@ -1,0 +1,28 @@
+{
+  "name": "lora",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "adapter": "outputs/lora/adapter",
+  "split": "test",
+  "prompt_style": "short",
+  "shots": 0,
+  "device": "mps",
+  "mean_prompt_tokens": 61.60032467532468,
+  "examples_per_second": 13.23,
+  "resources": {
+    "seconds": 232.8,
+    "peak_accelerator_gb": 2.386,
+    "peak_process_rss_gb": 0.698
+  },
+  "n": 3080,
+  "accuracy": 0.9285714285714286,
+  "accuracy_ci": [
+    0.9198051948051948,
+    0.9376704545454545
+  ],
+  "macro_f1": 0.929298705324096,
+  "macro_f1_ci": [
+    0.9197117572373684,
+    0.9376161298643887
+  ],
+  "invalid_rate": 0.0016233766233766235
+}
