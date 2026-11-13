@@ -1,5 +1,7 @@
 # LoRA fine-tuning for intent classification
 
+[![ci](https://github.com/luqman304/lora-finetuning/actions/workflows/ci.yml/badge.svg)](https://github.com/luqman304/lora-finetuning/actions/workflows/ci.yml)
+
 **Fine-tuning a 0.5B-parameter open LLM with LoRA on a laptop, measured against zero-shot and few-shot prompting
 of the same model.**
 
@@ -53,19 +55,43 @@ Throughput is batched greedy generation (batch 16) on the M4 GPU. The full table
 
 ---
 
+## Proof it works
+
+Captured from real runs on the M4 (terminal output rendered as images; the commands are shown at the top of each).
+
+**Test-set results**, produced by `lora-ft report` from the evaluation JSON files in `results/`.
+
+![Results table: LoRA 92.9% accuracy vs 76.2% few-shot and 19.1% zero-shot, paired difference +16.6 points](docs/screenshots/results.png)
+
+**The trained adapter, reloaded from disk**, classifying messages it was not trained on (none of them is in the training split).
+
+![lora-ft predict mapping five customer messages to the correct Banking77 intents](docs/screenshots/predict.png)
+
+**All 20 tests passing and lint clean.** The tests run offline on a tiny random model, including a full
+train / save / reload / evaluate / merge cycle.
+
+![pytest: 20 passed; ruff: all checks passed, 18 files already formatted](docs/screenshots/tests.png)
+
+**CI on GitHub Actions** (lint, tests and Docker image build) for the published commit.
+
+![GitHub Actions run: test and docker jobs succeeded](docs/screenshots/ci.png)
+
+---
+
 ## Contents
 
 1. [Headline results](#headline-results)
-2. [Setup](#setup)
-3. [Design decisions](#design-decisions)
-4. [Training details](#training-details)
-5. [Quick start](#quick-start)
-6. [CLI reference](#cli-reference)
-7. [Reproducing the results](#reproducing-the-results)
-8. [Testing and CI](#testing-and-ci)
-9. [Project layout](#project-layout)
-10. [Limitations](#limitations)
-11. [Next steps](#next-steps)
+2. [Proof it works](#proof-it-works)
+3. [Setup](#setup)
+4. [Design decisions](#design-decisions)
+5. [Training details](#training-details)
+6. [Quick start](#quick-start)
+7. [CLI reference](#cli-reference)
+8. [Reproducing the results](#reproducing-the-results)
+9. [Testing and CI](#testing-and-ci)
+10. [Project layout](#project-layout)
+11. [Limitations](#limitations)
+12. [Next steps](#next-steps)
 
 ---
 
@@ -223,6 +249,7 @@ src/lora_ft/
 tests/          offline pytest suite (tiny random model)
 scripts/        run_all.sh, end-to-end reproduction
 results/        committed metrics and training summary
+docs/           screenshots
 ```
 
 ## Limitations
